@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Track-buddy",
+    "slug": "Track-buddy",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/map.png",
+    "splash": {
+      "image": "./assets/map.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.trackBuddy.Exms07",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.trackBuddy.Exms07",
+      "versionCode": 1
+    }
+  }
+}
