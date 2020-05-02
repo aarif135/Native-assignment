@@ -4,7 +4,7 @@ import MapView ,{Marker}from 'react-native-maps'
 import * as Location from 'expo-location';
 
 
-import { View,Text,Dimensions,StyleSheet, Button } from "react-native";
+import { View,Text,Dimensions,StyleSheet, Button,StatusBar } from "react-native";
 
 
 
@@ -50,11 +50,26 @@ class Home extends Component {
      console.log("location==>",location)
     
     return <View style={styles.container}>
-<MapView initialRegion={coordinates} style={styles.mapStyle}>
-    <Marker coordinate={location}/>
+       <StatusBar  
+                    backgroundColor = "white"  
+                    barStyle = "dark-content"   
+                    hidden = {false}    
+                    translucent = {true}  
+                />  
+<MapView region={coordinates} initialRegion={coordinates} style={styles.mapStyle}>
+ 
+ 
   
 </MapView>
-
+<View
+        style={{
+            position: 'absolute',//use absolute position to show button on top of the map
+              bottom:'10%', //for center align
+            alignSelf: 'center' //for align to right
+        }}
+    >
+        <Button color='red' title='I AM IN DANGER' />
+    </View>
 
     </View>;
   }
@@ -67,10 +82,11 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center', 
     },
     mapStyle: {
       width: Dimensions.get('window').width,
       height: Dimensions.get('window').height,
+      flex:1
     },
   });
