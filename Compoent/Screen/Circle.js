@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Image, Text, Button,StatusBar } from "react-native";
+import { View, StyleSheet, Image, Text, Button,StatusBar,TextInput } from "react-native";
 import { withNavigation } from 'react-navigation';
 
 
@@ -15,7 +15,11 @@ class Circle extends Component {
                     hidden = {false}    
                     translucent = {true}  
                 />  
-          <Text style={{ color: "black" }}> LOGIN WITH FACEBOOK</Text>
+                <View style={{padding:10 }}>
+         
+          <TextInput  placeholderTextColor='black' placeholder='ENTER CIRCLE NAME' style={{borderWidth:2, borderColor:'grey',textAlign:'center'}} />
+          <Button title='add circle' color='#4934eb'/>
+          </View>
       </View>
     );
   }
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "center",
   },
 });

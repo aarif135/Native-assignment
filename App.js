@@ -13,6 +13,7 @@ import { HeaderButtons, HeaderButton, Item,HiddenItem } from 'react-navigation-h
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+
 import { withNavigation } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign} from '@expo/vector-icons';
@@ -30,17 +31,21 @@ const IoniconsHeaderButton = passMeFurther => (
   <HeaderButton {...passMeFurther} IconComponent={AntDesign} iconSize={30} color="black" />
 );
 
-class App extends Component {
+function App (){
   
+  const ref = React.useRef(null);
 
-  render() {
-    const ref = React.useRef(null);
+
 
       
     return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Login" component={Login} />
+      <NavigationContainer ref={ref}>
+        <Stack.Navigator initialRouteName="Login"
+        
+        >
+          <Stack.Screen name="Login" component={Login} options={{ headerStyle:{
+            backgroundColor:'lightgreen'
+          }}} />
           <Stack.Screen
             name="Home"
             component={Home}
@@ -50,7 +55,7 @@ class App extends Component {
               headerLeft: null,
               headerRight: ( navigate,navigation )=> (
                 <HeaderButtons HeaderButtonComponent={IoniconsHeaderButton}>
-      <Item title="search" iconName="adduser" onPress={() => navigation.navigate('Circle')} />
+      <Item title="search" iconName="adduser" onPress={() => ref.current && ref.current.navigate('CreateCircle')} />
       <Item title="select" iconName="user" onPress={() => alert('select')} />
     </HeaderButtons>
 
@@ -61,15 +66,16 @@ class App extends Component {
               },
             }}
           />
-           <Stack.Screen name="Circle" component={Circle} 
+           <Stack.Screen name="CreateCircle" component={Circle} 
            options={{ headerStyle:{
-             backgroundColor:'lightgreen'
+             backgroundColor:'lightgreen',
+      
            }}}
            />
         </Stack.Navigator>
             
       </NavigationContainer>
     );
-  }
+  
 }
 export default App

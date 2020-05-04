@@ -26,9 +26,9 @@ class Login extends Component {
 
         <TouchableOpacity
           onPress={this.faceBookLogin}
-          style={{ backgroundColor: "blue", padding: 10 }}
+          style={{ backgroundColor: "lightgreen", padding: 10 }}
         >
-          <Text style={{ color: "white" }}> LOGIN WITH FACEBOOK</Text>
+          <Text style={{ color: "black" }}> LOGIN WITH FACEBOOK</Text>
         </TouchableOpacity>
       </View>
     );
@@ -38,7 +38,7 @@ export default Login;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "lightgreen",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
