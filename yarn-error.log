@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Areeb Shakeel\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add expo-facebook@~8.1.0
+  C:\Program Files\nodejs\node.exe C:\Users\Areeb Shakeel\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add import { withNavigation } from 'react-navigation';
 
 PATH: 
-  C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Softwares\MATLAB Installed\runtime\win64;D:\Softwares\MATLAB Installed\bin;D:\Softwares\MATLAB Installed\polyspace\bin;D:\Areeb\Softwares\New Folder\runtime\win64;D:\Areeb\Softwares\New Folder\bin;D:\Areeb\Softwares\New Folder\polyspace\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\Areeb Shakeel\AppData\Local\Microsoft\WindowsApps;;C:\Users\Areeb Shakeel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Areeb Shakeel\AppData\Roaming\npm
+  C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Softwares\MATLAB Installed\runtime\win64;D:\Softwares\MATLAB Installed\bin;D:\Softwares\MATLAB Installed\polyspace\bin;D:\Areeb\Softwares\New Folder\runtime\win64;D:\Areeb\Softwares\New Folder\bin;D:\Areeb\Softwares\New Folder\polyspace\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Users\Areeb Shakeel\AppData\Local\Microsoft\WindowsApps;;C:\Users\Areeb Shakeel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Areeb Shakeel\AppData\Roaming\npm
 
 Yarn version: 
   1.22.4
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'D:\EXPERTIZO\REACT-NATIVE\Track-buddy\node_modules\@babel\compat-data\node_modules\.bin'
+  Error: https://registry.yarnpkg.com/%7B: Not found
+      at Request.params.callback [as _callback] (C:\Users\Areeb Shakeel\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66987:18)
+      at Request.self.callback (C:\Users\Areeb Shakeel\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\Areeb Shakeel\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\Areeb Shakeel\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1201:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -31,6 +41,7 @@ npm manifest:
       "@react-navigation/native": "^5.1.6",
       "@react-navigation/stack": "^5.2.13",
       "expo": "~37.0.3",
+      "expo-facebook": "~8.1.0",
       "expo-location": "~8.1.0",
       "firebase": "^7.14.2",
       "react": "~16.9.0",
@@ -2682,6 +2693,11 @@ Lockfile:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/expo-error-recovery/-/expo-error-recovery-1.1.0.tgz#98b9de5400dbfd022d1631739f3bf5e7016565da"
     integrity sha512-33aRfPaXdAt0df1TL26JjM5qCAoEW8RAExjgMgunPcdQcf4sWiWFm3qYL8zrO/8DM4uUq4X2FCuPLHMlOYT/aw==
+  
+  expo-facebook@~8.1.0:
+    version "8.1.0"
+    resolved "https://registry.yarnpkg.com/expo-facebook/-/expo-facebook-8.1.0.tgz#e23e1532b7622971ec6f9a3175fa29f864a25f49"
+    integrity sha512-tWr9zxHR/PLEoGm/2zJGzmRCMcgk/hKowV4bh7Xm/Diy34jlvYaWJEhiJT58v0QoSD/IXhUPYkCMFDL2hOGRFA==
   
   expo-file-system@~8.1.0:
     version "8.1.0"

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Image, Text, Button } from "react-native";
+import { View, StyleSheet, Image, Text, Button,StatusBar} from "react-native";
 import { TouchableOpacity, TextInput } from "react-native-gesture-handler";
 
 import Logo from "../../assets/map.png";
@@ -15,6 +15,12 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
+          <StatusBar  
+                    backgroundColor = "white"  
+                    barStyle = "dark-content"   
+                    hidden = {false}    
+                    translucent = {true}  
+                />  
         <Image source={Logo} style={{ height: 150, width: 150 }} />
         <Text style={{ fontSize: 25, fontWeight: "bold" }}>TRACK BUDDY</Text>
 

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import MapView ,{Marker}from 'react-native-maps'
 import * as Location from 'expo-location';
+import { withNavigation } from 'react-navigation';
+
 
 
 import { View,Text,Dimensions,StyleSheet, Button,StatusBar } from "react-native";
@@ -41,6 +43,7 @@ class Home extends Component {
 
     }
   render() {
+    
 
     const{coordinates,longitude,latitude,latitudeDelta,longitudeDelta}=this.state
     console.log(coordinates)
@@ -68,14 +71,17 @@ class Home extends Component {
             alignSelf: 'center' //for align to right
         }}
     >
-        <Button color='red' title='I AM IN DANGER' />
+        <Button onPress={()=>{
+              this.props.navigation.navigate("Circle");
+
+        }} color='red' title='I AM IN DANGER' />
     </View>
 
     </View>;
   }
 }
 
-export default Home
+export default withNavigation(Home) 
 
 const styles = StyleSheet.create({
     container: {

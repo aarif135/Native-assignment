@@ -6,18 +6,37 @@ import {
   Button,
   Image,
   View,
+  TouchableOpacity
 } from "react-native";
+import { HeaderButtons, HeaderButton, Item,HiddenItem } from 'react-navigation-header-buttons';
+
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { withNavigation } from 'react-navigation';
+import { Ionicons } from '@expo/vector-icons';
+import { AntDesign} from '@expo/vector-icons';
+
+
 
 import Login from "./Compoent/Screen/Login";
 import Home from "./Compoent/Screen/Home";
-import Circle from './Compoent/Screen/Circle.js'
+import Circle from './Compoent/Screen/Circle'
 const Stack = createStackNavigator();
+const IoniconsHeaderButton = passMeFurther => (
+  // the `passMeFurther` variable here contains props from <Item .../> as well as <HeaderButtons ... />
+  // and it is important to pass those props to `HeaderButton`
+  // then you may add some information like icon size or color (if you use icons)
+  <HeaderButton {...passMeFurther} IconComponent={AntDesign} iconSize={30} color="black" />
+);
 
-export default class App extends Component {
+class App extends Component {
+  
+
   render() {
+    const ref = React.useRef(null);
+
+      
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
@@ -25,16 +44,16 @@ export default class App extends Component {
           <Stack.Screen
             name="Home"
             component={Home}
+            
+
             options={{
               headerLeft: null,
-              headerRight: () => (
-                <View>
-                  <Button onPress={()=>{
-                 this.props.navigation.navigate("circle")
-                  }}  title="profile"  />
-                  
+              headerRight: ( navigate,navigation )=> (
+                <HeaderButtons HeaderButtonComponent={IoniconsHeaderButton}>
+      <Item title="search" iconName="adduser" onPress={() => navigation.navigate('Circle')} />
+      <Item title="select" iconName="user" onPress={() => alert('select')} />
+    </HeaderButtons>
 
-                </View>
               ),
               headerStyle: {
                 backgroundColor: "lightgreen",
@@ -42,10 +61,15 @@ export default class App extends Component {
               },
             }}
           />
-          <Stack.Screen Component={Circle} name='circle'/>
+           <Stack.Screen name="Circle" component={Circle} 
+           options={{ headerStyle:{
+             backgroundColor:'lightgreen'
+           }}}
+           />
         </Stack.Navigator>
             
       </NavigationContainer>
     );
   }
 }
+export default App
