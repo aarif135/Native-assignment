@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Image, Text, Button,StatusBar} from "react-native";
+import { View, StyleSheet, Image, Text, Button,StatusBar,AsyncStorage} from "react-native";
 import { TouchableOpacity, TextInput } from "react-native-gesture-handler";
 
 import Logo from "../../assets/map.png";
@@ -9,9 +9,27 @@ import FaceBookLogin from "../Screen/Api";
 class Login extends Component {
   faceBookLogin = async () => {
     await FaceBookLogin();
-    this.props.navigation.navigate("Home");
+    this.displayData()
   };
 
+  displayData=async()=>{
+    try {
+      const value = await AsyncStorage.getItem('user');
+      console.log("async value",value)
+      if (value !== null) {
+        let data=JSON.parse(value)
+      await  alert("logged in by:"+data.name)
+        // We have data!!
+        console.log(value);
+        this.props.navigation.navigate("Home");
+
+        
+       
+      }
+    } catch (error) {
+      // Error retrieving data
+    }
+  }
   render() {
     return (
       <View style={styles.container}>

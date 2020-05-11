@@ -6,7 +6,7 @@ import { withNavigation } from 'react-navigation';
 
 
 
-import { View,Text,Dimensions,StyleSheet, Button,StatusBar } from "react-native";
+import { View,Text,Dimensions,StyleSheet, Button,StatusBar  } from "react-native";
 
 
 
@@ -21,7 +21,9 @@ class Home extends Component {
     componentDidMount(){
       this.getLocation()
 
+
     }
+
     getLocation=async()=>{
         let { status } = await Location.requestPermissionsAsync();
         if(status=='granted'){
